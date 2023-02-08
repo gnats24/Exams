@@ -1,0 +1,35 @@
+//Test with empty list
+
+@Test
+public void test_withEmptyList() {
+  List<String> inputList = new ArrayList<>();
+  List<String> result = ListTransformer.transformList(inputList);
+  assertEquals(0, result.size());
+}
+
+//Test with one element
+
+@Test
+public void test_withOneElement() {
+  List<String> inputList = new ArrayList<>();
+  inputList.add("hello");
+  List<String> result = ListTransformer.transformList(inputList);
+  assertEquals(1, result.size());
+  assertEquals("HELLO", result.get(0));
+}
+
+//Test with multiple elements
+
+@Test
+public void test_withMultipleElements() {
+  List<String> inputList = new ArrayList<>();
+  inputList.add("hello");
+  inputList.add("world");
+  inputList.add("bar");
+  List<String> result = ListTransformer.transformList(inputList);
+  assertEquals(3, result.size());
+  assertEquals("HELLO", result.get(0));
+  assertEquals("WORLD", result.get(1));
+  assertEquals("BAR", result.get(2));
+}
+
